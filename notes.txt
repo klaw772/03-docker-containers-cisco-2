@@ -1,0 +1,11 @@
+Objectives:
+[] Manage containers (via user interface and via command line)
+[] Write our own docker-compose.yml file
+
+Key Questions:
+- REVIEW: What is the difference between an image and a container in Docker?
+- REVIEW: Why do we need to publish ports when running our container in Docker?
+- What is the difference between stopping a container vs removing a container?
+- Do we need Dockerfiles with Docker Compose?
+- What are the commands to start and stop a project using docker compose?
+- How do we set up a docker-compose.yml file?
