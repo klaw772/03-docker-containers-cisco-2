@@ -1,11 +1,21 @@
 Objectives:
-[] Manage containers (via user interface and via command line)
-[] Write our own docker-compose.yml file
+[x] Manage containers (via user interface and via command line)
+[x] Write our own docker-compose.yml file
 
 Key Questions:
 - REVIEW: What is the difference between an image and a container in Docker?
+  - An Image is a blueprint of what we want the standardized runtime environment to look like. And, a container is the running application in the standardized runtime environment.
 - REVIEW: Why do we need to publish ports when running our container in Docker?
+  - Without the published port when running the application, we will not be able to see it outside of the container. The container is isolated. Even though we’ve exposed a port in our Dockerfile, we need to make sure that a port outside of the container is publishing what’s being exposed from the dockerfile.
 - What is the difference between stopping a container vs removing a container?
+  - Stopping a container just stops it from running, while removing completely deletes the container. If you’re completely done using a container, you can remove it to save storage space. Stopping a container could be helpful if you want to use it again so you don’t need to rebuild the whole thing.
 - Do we need Dockerfiles with Docker Compose?
+  - YES! We still need a dockerfile for each of the services that we will have in our docker compose file.
+  - Docker compose will build each of the services based on the dockerfiles, similarly to how we used the docker build command.
 - What are the commands to start and stop a project using docker compose?
+  - Docker-compose up and docker-compose down
 - How do we set up a docker-compose.yml file?
+  - At its most fundamental level, we are: 
+    - listing each of the apps we want to run through docker (e.g. a backend service, a frontend service)
+    - designating the location of the dockerfile
+    - specifying ports to be published (they have already been exposed in each dockerfile)
